@@ -37,6 +37,11 @@ public class Usuario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @Column(nullable = false, length = 30)
+    @Size(min = 8, max = 30, message = "El campo debe contener entre 8 y 30 caracteres")
+    @NotBlank(message = "Este campo no puede estar vacio")
+    private String password;
+
     @Column(nullable = false, length = 150)
     @Size(min = 2, max = 50, message = "El campo debe contener entre 2 y 150 caracteres")
     @NotBlank(message = "Este campo no puede estar vacio")

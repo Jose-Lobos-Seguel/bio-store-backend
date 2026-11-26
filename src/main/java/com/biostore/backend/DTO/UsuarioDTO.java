@@ -15,6 +15,10 @@ public class UsuarioDTO {
 
     private Integer id;
 
+    @NotBlank(message = "La contraseña es obligatoria")
+    @Size(min = 8, max = 30, message = "El nombre no puede superar los 50 caracteres")
+    private String password;
+
     @NotBlank(message = "El nombre es obligatorio")
     @Size(max = 50, message = "El nombre no puede superar los 50 caracteres")
     private String nombre;

@@ -34,9 +34,9 @@ public class UsuarioController {
         return ResponseEntity.ok(usuarioService.listarUsuarios());
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<UsuarioDTO> obtenerUsuarioPorId(@PathVariable Integer id) {
-        return ResponseEntity.ok(usuarioService.obtenerUsuarioPorId(id));
+    @GetMapping("/{correo}")
+    public ResponseEntity<UsuarioDTO> obtenerUsuarioPorCorreo(@PathVariable String correo) {
+        return ResponseEntity.ok(usuarioService.obtenerUsuarioPorCorreo(correo));
     }
 
     @PostMapping

@@ -68,6 +68,7 @@ public class Producto {
     @JsonIgnore
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
+    //Una lista por si podemos agregar que se muestren varias imagenes en una pagina de producto, varias poses etc
     private List<Imagen> imagenes = new ArrayList<>();
 
     @ManyToOne

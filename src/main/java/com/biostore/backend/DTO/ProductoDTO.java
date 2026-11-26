@@ -43,5 +43,5 @@ public class ProductoDTO {
 
     private String nombreFranquicia;
 
-    private List<String> imagenes;
+    private List<Integer> imagenesIds;
 }
