@@ -54,7 +54,7 @@ public class UsuarioService {
     }
 
     public UsuarioDTO obtenerUsuarioPorCorreo(String correo){
-        Usuario usuario = usuarioRepository.findByCorreo(correo)
+        Usuario usuario = usuarioRepository.findByEmail(correo)
             .orElseThrow(() -> new RuntimeException("No existe un usuario con correo: " + correo));
         return toDTO(usuario);
     }
