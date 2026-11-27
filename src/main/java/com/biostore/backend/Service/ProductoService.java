@@ -101,6 +101,7 @@ public class ProductoService {
         dto.setPrecioProducto(producto.getPrecioProducto());
         dto.setStockProducto(producto.getStockProducto());
         dto.setProductoActivo(producto.getProductoActivo());
+        dto.setNombreFranquicia(producto.getFranquicia().getNombreFranquicia());
 
         if (producto.getFranquicia() != null) {
             dto.setFranquiciaId(producto.getFranquicia().getId());

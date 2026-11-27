@@ -31,7 +31,7 @@ public class FranquiciaService {
     public FranquiciaDTO crearFranquicia(FranquiciaDTO dto) {
         Franquicia franquicia = new Franquicia();
         franquicia.setNombreFranquicia(dto.getNombreFranquicia());
-        franquicia.setFranquiciaActiva(dto.getFranquiciaActiva() != null ? dto.getFranquiciaActiva() : "true");
+        franquicia.setFranquiciaActiva(dto.getFranquiciaActiva() != null ? dto.getFranquiciaActiva() : true);
         return toDTO(franquiciaRepository.save(franquicia));
     }
 

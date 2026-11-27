@@ -42,7 +42,7 @@ public class Franquicia {
     @NotNull(message = "Este valor debe tener un estado")
     //Esto para seguir con la idea de activar productos
     //Desactivar una franquicia desactivara todos los productos de la franquicia
-    private String franquiciaActiva;
+    private Boolean franquiciaActiva;
 
     @OneToMany(mappedBy = "franquicia")
     @JsonIgnore

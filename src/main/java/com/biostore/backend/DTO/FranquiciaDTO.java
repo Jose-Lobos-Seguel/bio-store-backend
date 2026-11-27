@@ -14,7 +14,7 @@ public class FranquiciaDTO {
 
     private String nombreFranquicia;
 
-    private String franquiciaActiva;
+    private Boolean franquiciaActiva;
     
     private List<Integer> productosIds;
 }
