@@ -68,6 +68,16 @@ public class UsuarioService {
         return toDTO(guardado);
     }
 
+    public boolean validarCredenciales(String email, String password) {
+        if (email == null || password == null) {
+        return false;
+        }
+
+        return usuarioRepository.findByEmail(email)
+            .map(usuario -> usuario.getPassword() != null && usuario.getPassword().equals(password))
+            .orElse(false);
+    }
+
     public UsuarioDTO actualizarUsuario(Integer id, UsuarioDTO dto){
         Usuario usuario = usuarioRepository.findById(id)
             .orElseThrow(() -> new RuntimeException("No se pudo encontrar un usuario con el id: " + id));

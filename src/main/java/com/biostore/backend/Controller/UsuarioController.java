@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.biostore.backend.DTO.LoginRequest;
 import com.biostore.backend.DTO.UsuarioDTO;
 import com.biostore.backend.Service.UsuarioService;
 
@@ -54,5 +55,11 @@ public class UsuarioController {
     public ResponseEntity<Void> eliminarUsuario(@PathVariable Integer id) {
         usuarioService.eliminarUsuario(id);
         return ResponseEntity.noContent().build();
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<Boolean> validarCredenciales(@Valid @RequestBody LoginRequest request) {
+    boolean esValido = usuarioService.validarCredenciales(request.getEmail(), request.getPassword());
+    return ResponseEntity.ok(esValido);
     }
 }
